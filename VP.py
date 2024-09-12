@@ -90,8 +90,8 @@ def train_and_evaluate(X_train, X_test, y_train, submission_df, label):
     submission_df[label] = y_pred_proba
     return submission_df
 
-submission_hackathon = pd.DataFrame(index=X_test.index)
-submission_hackathon = train_and_evaluate(X_xyz, X_test_xyz, y_xyz, submission_hackathon, 'xyz_vaccine')
-submission_hackathon = train_and_evaluate(X_sea, X_test_sea, y_sea, submission_hackathon, 'seasonal_vaccine')
+output = pd.DataFrame(index=X_test.index)
+output = train_and_evaluate(X_xyz, X_test_xyz, y_xyz, output, 'xyz_vaccine')
+output = train_and_evaluate(X_sea, X_test_sea, y_sea, output, 'seasonal_vaccine')
 
-print(submission_hackathon)
+print(output)
